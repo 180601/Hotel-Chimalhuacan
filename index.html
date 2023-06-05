@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Hotel Chimalhuacán</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='Inicio.css'>
+
+    <!-- Paquetes o Librerías utilizadas en el proyecto  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">  
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+    <script src='main.js'></script>
+</head>
+<body>
+
+    <!--Encabezado-->
+        <!-- En esta área utilizando la etiqueta header mostrará un menu de opciones
+        las cuales son las que quermos mostrar en nuestro sitio web, para un mejor
+        manejo o accesso através de botones o links de redireccionamiento -->
+    <header class="header">
+
+        <a href="#" class="logo">
+            <img src="IMAGENES/icono.png">
+            <!-- <i class="fas fa-hotel"></i></a> Icono de Hotel -->
+
+        <nav class="navbar">
+            <a href="#inicio">Inicio</a>
+            <a href="#promocion">Promociones</a>
+            <a href="#habitacion">Habitaciones</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#footer">Contacto</a>
+            <a href="#reservacion" class="btn">Reservaciones</a>
+        </nav>
+
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+    </header>
+    <!--Fin Encabezado-->
+
+
+    <!--Hotel Inicio-->
+    <!-- En esta sección, se quiere mostrar imagenes del Hotel como primera impresión
+        y de esta manera sea un atractivo visual para el cliente. -->
+
+
+    <section class="inicio" id="inicio">
+         <!-- Para poder mover las imagenes de un lado a otro utilizamos la clase swiper, que nos permitirá
+            deslizarnos y cambiar las imágenes, esta clase nos permitirá deslizar las imágnes de nuestro sitio web
+            sin embargo su funcionalidad o configuración se verá en el apartado de JSON -->
+            
+        <div class="swiper home-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slide" style="background: url(IMAGENES/logohch.jpg) no-repeat;">
+                    <div class="contenido">
+                        <h3>EL MEJOR LUGAR PARA DESCANSAR</h3>
+                        <a href="#" class="btn">Visitanos</a>
+                    </div>
+
+                </div>
+                <div class="swiper-slide slide" style="background: url(IMAGENES/inicio\ noche.jpg) no-repeat;">
+                    <div class="contenido">
+                        <h3>EL MEJOR LUGAR PARA DESCANSAR</h3>
+                        <a href="#" class="btn">Visitanos</a>
+                    </div>
+
+                </div>
+
+                <div class="swiper-slide slide" style="background: url(IMAGENES/HotelDia.jpg) no-repeat;">
+                    <div class="contenido">
+                        <h3>EL MEJOR LUGAR PARA DESCANSAR</h3>
+                        <a href="#" class="btn">Visitanos</a>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- Contenedor de botones para cambiar entre las imagenes  -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+        </div>
+
+    </section>
+
+    <!--Fin Hotel Inicio-->
+
+    <!--Disponibilidad-->
+    <!-- En esta sección el usuario podrá consultar la disponibilidad de las habitaciones
+        por medio de un formulario, donde los requisitos son la fecha de entrada, salida
+        numero de personas, tipo de habitacion.  -->
+    <section class="disponibilidad">
+
+        <form action="">
+
+            <div class="box"> 
+                <p>Entrada <span>*</span></p>
+                <input type="date" class="input">
+            </div>
+
+            <div class="box"> 
+                <p>Salida <span>*</span></p>
+                <input type="date" class="input">
+            </div>
+
+            <div class="box">
+                <p>Personas <span>*</span></p>
+                <select name="personas" id="" class="input">
+                    <option value="1">1 persona</option>
+                    <option value="2">2 personas</option>
+                    <option value="3">3 personas</option>
+                    <option value="4">4 personas</option>
+                    <option value="5">5 personas</option>
+                    <option value="6">6 personas</option>
+
+                </select>
+            </div>
+            <div class="box">
+                <p>Habitaciones <span>*</span></p>
+                <select name="Habitaciones" id="" class="input">
+                    <option value="1">1 Habitacion</option>
+                    <option value="2">2 Habitaciones</option>
+                    <option value="3">3 Habitaciones</option>
+                    <option value="4">4 Habitaciones</option>
+                    <option value="5">5 Habitaciones</option>
+                    <option value="6">6 Habitaciones</option>
+
+                </select>
+            </div>
+            <div class="box">
+                <p>Tipo Habitacion <span>*</span></p>
+                <select name="Tipo Habitacion" id="" class="input">
+                    <option value="1">Matrimonial</option>
+                    <option value="2">Doble</option>
+                    <option value="3">King Size</option>
+                </select>
+            </div>
+
+            <input type="submit" value="Ver disponibilidad" class="btn">
+        </form>
+
+    </section>
+
+    <!--Fin Disponibilidad-->
+
+        <!--Promociones-->
+        <!-- En esta sección se mostrarán las promociones que cuenta el Hotel, de la misma manera
+        que la sección anterior; utilizaremmos swiper, para que las promociones no estén estáticas
+         en caso de agregar más de tres imagenes -->
+
+        <section class="promocion" id="promocion">
+
+            <h1 class="titulo">Las mejores promociones</h1>
+    
+            <div class="swiper prom-slider">
+    
+                <div class="swiper-wrapper">
+    
+                    <div class="swiper-slide slide">
+                        <div class="imagen">
+                            <img src="IMAGENES/promodiaria.jpg">
+    
+                        </div>
+                        <div class="contenido">
+                            
+                            <a href="#" class="btn"> Reservar</a>
+    
+                        </div>
+    
+                    </div>
+                    <div class="swiper-slide slide">
+                        <div class="imagen">
+                            <img src="IMAGENES/promofin.jpg">
+    
+                        </div>
+                        <div class="contenido">
+    
+                            <a href="#" class="btn"> Reservar</a>
+    
+                        </div>
+    
+                    </div>
+                    <div class="swiper-slide slide">
+                        <div class="imagen">
+                            <img src="IMAGENES/promofebrero.jpg">
+    
+                        </div>
+                        <div class="contenido">
+    
+                            <a href="#" class="btn"> Reservar</a>
+    
+                        </div>
+    
+                    </div>
+    
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+    
+    
+        </section>
+        <!--Fin Promocionnes-->
+
+    <!--Habitaciones-->
+        <!-- La sección muestrá las habitaciones del Hotel, resaltando sus tres diferentes tipos,
+        adicionalemente a ello información de cada una de estas. -->
+    <section class="habitaciones" id="habitacion">
+
+        <h1 class="titulo">Nuestras Habitaciones</h1>
+
+        <div class="swiper room-slider">
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide slide">
+                    <div class="imagen">
+                        <img src="IMAGENES/Matrimonial2.jpg">
+
+                    </div>
+                    <div class="contenido">
+                        <h3>Habitación Matrimonial</h3>
+                        <p>Con Capacidad para 2 Personas <br>
+                            Cuenta con todos los servicios <br>
+                            <br></p>
+                        
+                        <a href="#" class="btn"> Reservar</a>
+
+                    </div>
+
+                </div>
+                <div class="swiper-slide slide">
+                    <div class="imagen">
+                        <img src="IMAGENES/Doble2.jpg">
+
+                    </div>
+                    <div class="contenido">
+                        <h3>Habitación Doble</h3>
+                        <p>Con Capacidad para 4 Personas <br>
+                            Cuenta con todos los servicios
+                            <br><br></p>
+
+                        <a href="#" class="btn"> Reservar</a>
+
+                    </div>
+
+                </div>
+                <div class="swiper-slide slide">
+                    <div class="imagen">
+                        <img src="IMAGENES/king2.jpg">
+
+                    </div>
+                    <div class="contenido">
+                        <h3>Habitación King Size</h3>
+                        <p>Con Capacidad para 2 Personas <br>
+                            Algunas habitaciones puede incluir el sillón Potro</p>
+
+                        <a href="#" class="btn"> Reservar</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <h3 class="Nota"> *Si la reservación excede el número de personas habrá un cargo extra</h3>
+    </section>
+    <!--Fin Habitaciones-->
+
+    <!--Servicios-->
+        <!-- Para destacar los servicios que ofrece el Hotel, se crea esta sección, creando un contenedor
+         que almacenan iconos de los servicios ofecidos -->
+
+    <section class="servicios" id="servicios">
+
+        <h1 class="titulo">Servicios</h1>
+
+        <div class="box-container">
+            <div class="box">
+                <img src="IMAGENES/garage.png">
+                <h3>Garage</h3>
+            </div>
+
+            <div class="box">
+                <img src="IMAGENES/smart-tv.png">
+                <h3>Televisión por Cable</h3>
+            </div>
+
+            <div class="box">
+                <img src="IMAGENES/wifi.png">
+                <h3>Internet</h3>
+            </div>
+
+            <div class="box">
+                <img src="IMAGENES/room-service.png">
+                <h3>Servicio a habitación</h3>
+            </div>
+
+             <div class="box">
+                <img src="IMAGENES/door-hanger.png">
+                <h3>Limpieza en Habitaciones</h3>
+             </div>
+
+            <div class="box">
+                <img src="IMAGENES/burger.png">
+                <h3>Comidas y Bebidas</h3>
+             </div>
+
+            <div class="box">
+                <img src="IMAGENES/personal-care.png">
+                <h3>Articulos de Higiene Personal</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--Fin Servicios-->
+
+    <!--Galeria-->
+        <!-- Como el nombre lo menciona, muestra el contenido multimedia del Hotel,
+        de esta manera el usuario podrá ver más acerca del establecimiento.
+        De la misma manera que la sección de Inicio, Promociones, Habitaciones
+         se hace uso de swiper, para que las imágenes se muevan automáticamente -->
+
+    <section class="galeria" id="galeria">
+
+        <h1 class="titulo">Galeria</h1>
+
+        <div class="swiper gallery-slider">
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide slide">
+                    <img src="IMAGENES/Entrada.jpg">
+                    <div class="icon">
+                        <i class="fas fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <img src="IMAGENES/garage2.jpg">
+                    <div class="icon">
+                        <i class="fas fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <img src="IMAGENES/pasillo3er.jpg">
+                    <div class="icon">
+                        <i class="fas fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <img src="IMAGENES/3piso.jpg">
+                    <div class="icon">
+                        <i class="fas fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <img src="IMAGENES/Servicios.jpg">
+                    <div class="icon">
+                        <i class="fas fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <img src="IMAGENES/ChimalliG.jpg">
+                    <div class="icon">
+                        <i class="fas fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+
+            </div>
+
+    </section>
+
+        <!-- Pie de Página -->
+    <!-- En esta sección se pretende mostrar información relacionada con el establecimiento;
+         tales como la ubicación, las redes sociales y forma de contactarse. -->
+
+    <section class="footer" id="footer">
+        <h3>Nos ubicamos en: </h3>
+
+    <!-- Para mostrar un mapa de ubicación por medio de Google se utilizó un iframe, y obteniendo la url
+            del destino se almacenará en un contenedor, añadiendo un ancho y altura para mejor visualización -->
+
+        <div class="mapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d516.6603300450398!2d-98.98624118030588!3d19.413763307209276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1e3146421c18f%3A0xedc4614547c18598!2sHotel%20Chimalhuac%C3%A1n!5e0!3m2!1ses-419!2smx!4v1684002251614!5m2!1ses-419!2smx" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <h3>Consulta nuestras redes Sociales</h3>
+            <!-- En este contenedor, se mostrarán los iconos de las redes sociales, y una vez dando clic
+                 redireccionará a la url predeterminada -->
+            <div class="redes">
+                <a href="https://www.facebook.com/HotelChimalhuacan" class="fab fa-facebook"></a>
+                <a href="https://instagram.com/hotelchimalhuacan?igshid=YmMyMTA2M2Y=" class="fab fa-instagram"></a>
+                <a href="Tienda.html" class="fab fa-whatsapp"></a>
+    
+            </div>
+    
+            <div class="derechos">
+                Copyright ©2023 <a href="#">Not Found 404</a>
+                All rights reserved. </a>
+            </div>
+        
+    </section>
+    <!-- Fin Pie de página -->
+
+
+    <!-- Script, dando paso al documento JavaScript donde le dará funcionalidad a algunos métodos o clases
+    tales como swiper -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="Inicio.js"></script>
+    
+</body>
+</html>

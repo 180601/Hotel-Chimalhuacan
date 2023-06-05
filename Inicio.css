@@ -1,0 +1,600 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+/* `:root` es un selector de pseudoclase que selecciona el elemento raíz del documento, que suele ser el elemento `html`.
+ El bloque de código que sigue a `:root` define variables CSS personalizadas utilizando la sintaxis `--`. 
+ Estas variables se pueden usar en todo el código CSS para definir colores, sombras y otras propiedades. 
+ Por ejemplo, `--primary` se define como `#ffa300`, que se puede usar para establecer el color de fondo 
+ de un elemento en ese valor usando `background: var(--primary)`. 
+ Esto permite una fácil personalización y coherencia en todo el código CSS. */
+
+:root{                          /* Selecciona el elemento raiz = html*/
+    --primary: #ffa300;
+    --secondary: #f28322;
+    --black: #333;
+    --white: #fff;
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+/* Este bloque de código CSS establece estilos predeterminados para todos los elementos de la página. */
+*{
+    
+    font-family: 'Poppins', sans-serif;
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+/* Este bloque de código CSS está configurando algunos estilos predeterminados para el elemento `html`. */
+html{
+    background-color: #201f1d;
+    font-size: 62.5%;
+    overflow-x: hidden;
+    cursor: url(IMAGENES/chimalli.ico),auto;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+/* `html::-webkit-scrollbar` es un selector de pseudo-elemento que selecciona el elemento de la barra de
+ desplazamiento en navegadores basados en webkit (como Google Chrome y Safari) en el elemento `html`. 
+ La propiedad `width` establece el ancho de la barra de desplazamiento en 0,8 rem. 
+ Esto permite la personalización de la apariencia de la barra de desplazamiento. */
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+
+/* `html::-webkit-scrollbar-track` es un selector de pseudo-elemento que selecciona el elemento de seguimiento 
+de la barra de desplazamiento en navegadores basados en webkit (como Google Chrome y Safari) en el elemento `html`. 
+La propiedad `background` establece el color de fondo del elemento de la pista en transparente, lo que significa que 
+se mostrará el color de fondo del elemento detrás de la barra de desplazamiento. 
+Esto permite la personalización de la apariencia de la barra de desplazamiento. */
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+/* `html::-webkit-scrollbar-thumb` es un selector de pseudo-elemento que selecciona el elemento pulgar de la barra 
+de desplazamiento en los navegadores basados en webkit (como Google Chrome y Safari) en el elemento `html`. 
+La propiedad `background` establece el color de fondo del elemento del pulgar en el valor de la variable `--primary`, 
+que se define como `#ffa300`. La propiedad `border-radius` establece el radio del borde del elemento del pulgar en 0,5 rem,
+ lo que le da esquinas redondeadas. Esto permite la personalización de la apariencia de la barra de desplazamiento. */
+html::-webkit-scrollbar-thumb{
+    background: var(--primary);
+    border-radius: .5rem;
+}
+
+section{
+    padding: 5rem 7%;
+}
+
+/* La clase `.titulo` está definiendo estilos para un elemento de título. 
+Establece el tamaño de fuente en 4 rem, el color en el valor de la variable `--primary`, 
+que se define como `#ffa300`, la alineación del texto en el centro, la transformación del texto en mayúsculas,
+ el peso de la fuente en negrita y añade un margen inferior de 2 rem. 
+Esta clase se puede aplicar a cualquier elemento HTML para darle estos estilos. */
+.titulo{
+    font-size: 4rem;
+    color: var(--primary);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    margin-bottom: 2rem;
+}
+/* La clase `.Nota` está definiendo estilos para un elemento de nota. Establece el tamaño de fuente en 2 rem,
+ el color en blanco, la alineación del texto en el centro, el peso de la fuente en negrita y la transformación
+del texto en mayúsculas. Esta clase se puede aplicar a cualquier elemento HTML para darle estos estilos. */
+.Nota{
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+/* Este bloque de código CSS define estilos para un elemento de botón con la clase `.btn`. 
+Establece la visualización en `bloque en línea`, agrega un margen de 1 rem en la parte superior,
+establece el relleno en 1 rem en la parte superior e inferior y en 3 rem a la izquierda y a la derecha,
+ establece el color de fondo en el valor de `-- La variable principal, que se define como `#ffa300`, 
+ establece el radio del borde en 0,5 rem, establece el color del texto en blanco y
+  establece el tamaño de fuente en 1,7 rem. Esta clase se puede aplicar a cualquier elemento de botón HTML para darle estos estilos. */
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 3rem;
+    background: var(--primary);
+    border-radius: .5rem;
+    color: var(--white);
+    font-size: 1.7rem;
+
+}
+
+.btn:hover{
+    background: var(--secondary);
+}
+/* Header */
+
+/* Este bloque de código CSS define estilos para el elemento de encabezado de la página web. 
+Establece la posición en fijo, lo que significa que el encabezado permanecerá en la misma posición
+incluso cuando el usuario se desplace hacia abajo en la página. También establece las posiciones superior,
+izquierda y derecha en 0, lo que significa que el encabezado se fijará en la parte superior de la página 
+y abarcará todo el ancho de la página. La propiedad z-index establece el orden de apilamiento del elemento 
+de encabezado, lo que determina qué elementos aparecen encima de otros. 
+El color de fondo se establece en negro y se agrega una sombra de cuadro para darle al encabezado un efecto de sombra.
+La propiedad de visualización se establece en flex, lo que permite opciones de diseño flexibles. 
+Las propiedades de alineación de elementos y justificación de contenido se establecen en centro y
+ espacio entre, respectivamente, lo que centra los elementos en el encabezado y distribuye uniformemente
+  el espacio entre ellos. Finalmente, se agrega relleno en la parte superior e inferior del 
+  encabezado para crear un espacio entre el contenido y los bordes del encabezado.
+el encabezado */
+
+.header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: #000;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 9%;
+}
+/* El código anterior define los estilos CSS para el elemento del logotipo dentro del elemento del encabezado.
+ Establece el tamaño de la fuente en 2,5 rem, el grosor de la fuente en negrita y el color en una 
+ variable CSS personalizada denominada "--black". */
+.header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--black);
+}
+
+
+/* El código anterior define estilos CSS para el elemento del logotipo dentro del elemento del encabezado. 
+Establece el color del ícono en negro y agrega algo de relleno a la derecha. 
+También establece el ancho y el alto de la imagen del logotipo en 250 px y 90 px respectivamente. */
+.header .logo i{
+    color: black;
+    padding-right: .5rem;
+}
+.header .logo img{
+    width: 250px;
+    height: 90px;
+}
+
+/* El código anterior establece el tamaño de fuente en 1,7 rem, el color en blanco y el 
+margen en 0 en las etiquetas de anclaje dentro del elemento de la barra de navegación que
+está dentro del elemento del encabezado. Es un código CSS para diseñar los enlaces de 
+navegación en el encabezado de un sitio web. */
+
+.header .navbar a{
+    font-size: 1.7rem;
+    color: var(--white);
+    margin: 0 1rem;
+}
+
+/* El código anterior define una regla de estilo CSS que cambia el color del texto de 
+un hipervínculo en la barra de navegación de un elemento de encabezado cuando el usuario 
+se desplaza sobre él. El color se establece en el valor de la variable CSS "--primary". */
+
+.header .navbar a:hover{
+    color: var(--primary);
+}
+.header .navbar .btn{
+    margin-top: 0;
+    color: var(--white);
+}
+.header .navbar .btn:hover{
+    color: var(--white);
+
+}
+
+/* El código anterior define los estilos CSS para un botón de menú con el ID "menu-btn".
+ Establece la visualización en ninguno, el tamaño de fuente en 2,5 rem, el margen 
+ izquierdo en 2 rem, el cursor en puntero y el color en var (--blanco). 
+ También establece el color de desplazamiento en var(--primary). */
+#menu-btn{
+    display: none;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+    cursor: pointer;
+    color: var(--white);
+}
+
+#menu-btn:hover{
+    color: var(--primary);
+}
+
+/* Inicio */
+
+/* El código anterior define una clase CSS llamada "inicio" y establece su relleno en 0.
+ Esta clase se puede aplicar a elementos HTML para eliminar cualquier relleno que puedan tener. */
+.inicio{
+    padding: 0;
+}
+/* El código anterior define los estilos CSS para un elemento de diapositiva con la clase "slide" 
+que está contenido dentro de un elemento con la clase "inicio". Los estilos incluyen establecer 
+la altura mínima de la diapositiva al 100% de la altura de la ventana gráfica, establecer el tamaño
+de la imagen de fondo para cubrir todo el elemento de la diapositiva, alinear la imagen de fondo con
+el centro del elemento de la diapositiva y establecer la propiedad de visualización para que se flexione
+con alineación central para sus elementos secundarios. La propiedad del índice z también se establece en
+-1, lo que significa que el elemento de la diapositiva se colocará detrás de otros elementos de la página. */
+
+.inicio .slide{
+    min-height: 100vh;
+    background-size: cover !important;
+    background-position: center !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+}
+
+.inicio .slide .contenido{
+    width: 80rem;
+    text-align: center;
+}
+
+.inicio .slide .contenido h3{
+    font-size: 4rem;
+    text-transform: uppercase;
+    color: var(--white);
+    line-height: 1.1;
+    padding: 2rem 0;
+}
+/* El código anterior define los estilos CSS para los botones siguiente y anterior de un control deslizante.
+ Establece el color en #eee (gris claro), la altura y el ancho en 5 rem y la altura de línea en 5 rem. */
+.swiper-button-next,
+.swiper-button-prev{
+    color: #eee;
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+
+
+}
+
+/* El código anterior define estilos CSS para el estado de desplazamiento de los botones siguiente y
+ anterior en un componente de deslizador. Cambia el color de los botones a una variable personalizada 
+ llamada "--primary" cuando se pasa el cursor por encima y aumenta el tamaño de fuente de los iconos de los botones a 2 rem. */
+.swiper-button-next:hover,
+.swiper-button-prev:hover{
+    color: var(--primary);
+
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after{
+    font-size: 2rem;
+}
+/* Fin Inicio */
+
+
+/* Disponibilidad */
+/* El código anterior está definiendo estilos CSS para un elemento de formulario con la clase "disponibilidad".
+ Establece la propiedad de visualización en flexible, lo que permite que los elementos del formulario se organicen 
+ en un diseño flexible. La propiedad flex-wrap se establece en wrap, lo que significa que los elementos se ajustarán
+a la siguiente línea si no hay suficiente espacio en la línea actual. La propiedad gap establece el espacio entre los
+elementos del formulario. La propiedad de fondo establece el color de fondo del formulario en #eee (gris claro).
+La propiedad de relleno agrega espacio dentro del elemento de formulario. La propiedad del radio del 
+borde establece las esquinas redondeadas del elemento de formulario */
+
+.disponibilidad form{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    background: #eee;
+    padding: 2rem;
+    border-radius: .5rem;
+
+}
+
+.disponibilidad form .box{
+    flex: 1 1 20rem;
+}
+
+.disponibilidad form .box p{
+    font-size: 2rem;
+    color: var(--primary);
+
+}
+
+/* El código anterior está definiendo los estilos CSS para el elemento de entrada dentro de un formulario 
+que está dentro de un elemento de caja con la clase "disponibilidad". Establece el ancho al 100%, agrega 
+relleno y tamaño de fuente, establece el color del texto en negro, agrega margen y establece un radio de borde de 0,5 rem. */
+.disponibilidad form .box .input{
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.8rem;
+    color: var(--black);
+    margin: 1rem 0;
+    border-radius: .5rem;
+}
+/* Fin Disponibilidad */
+
+/* Promociones */
+
+.promocion .slide{
+    margin-bottom: 2rem;
+}
+
+/* El código anterior está definiendo estilos CSS para el selector ".promocion .slide .imagen".
+ Establece la altura y el ancho al 100%, agrega un relleno de 1, establece el desbordamiento
+en oculto y posiciona el elemento relativamente. Es probable que este código se use para 
+diseñar una imagen dentro de un carrusel o un control deslizante promocional. */
+.promocion .slide .imagen{
+    height: 100%;
+    width: 100%;
+    padding: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.promocion .slide .imagen img{
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+
+.promocion .slide .contenido{
+    text-align: center;
+    padding: 2rem;
+    padding-top: 0;
+}
+
+.promocion .slide .contenido h3{
+    font-size: 2.5rem;
+
+}
+/* Habitaciones */
+
+/* El código anterior está definiendo los estilos CSS para un elemento de diapositiva dentro de una sección con 
+la clase "habitaciones". Establece el color de fondo en negro, agrega un borde con una ligera transparencia, 
+redondea las esquinas del elemento, agrega una sombra de cuadro y establece un margen en la parte inferior del elemento. */
+.habitaciones .slide{
+    background: #000;
+    border: .1rem solid rgba(0, 0, 0, 0.2);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 4rem;
+}
+
+/* El código anterior define estilos CSS para un elemento de imagen con la clase "imagen" que es hijo
+de un elemento con las clases "slide" y "habitaciones". Los estilos incluyen establecer la altura en 35 rem,
+el ancho en 100%, agregar un relleno de 1.5, ocultar cualquier desbordamiento y posicionar el elemento relativamente. */
+
+.habitaciones .slide .imagen{
+    height: 35rem;
+    width: 100%;
+    padding: 1.5;
+    overflow: hidden;
+    position: relative;
+}
+
+.habitaciones .slide .imagen img{
+    width: 100%;
+    height: 100%;
+    border-radius: 1.5rem;
+    object-fit: cover;
+}
+
+.habitaciones .slide .contenido{
+    text-align: center;
+    padding: 2rem;
+    padding-top: 0;
+}
+
+.habitaciones .slide .contenido h3{
+    font-size: 2.5rem;
+    color: var(--secondary)
+}
+
+.habitaciones .slide .contenido p{
+    font-size: 1.8rem;
+    color: white;
+}
+/* Fin Habitaciones */
+
+/* Servicios */
+
+/* El código anterior está definiendo un estilo CSS para un elemento contenedor con la clase "box-container" 
+que es parte de una sección con la clase "servicios". El estilo utiliza la cuadrícula CSS para crear un 
+diseño receptivo con columnas que tienen un ancho mínimo de 16 rem y un ancho máximo de 1 fr 
+(lo que significa que las columnas ocuparán el mismo espacio dentro del contenedor). 
+La palabra clave "ajuste automático" permite que las columnas se ajusten automáticamente
+ según el espacio disponible, y la propiedad "brecha" agrega una brecha de 2 rem entre las columnas. */
+.servicios .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 2rem;
+}
+.servicios .box-container .box{
+    text-align: center;
+}
+
+.servicios .box-container .box img{
+    height: 10rem;
+    margin-bottom: .7rem;
+}
+
+.servicios .box-container .box h3{
+    font-size: 1.7rem;
+    color: var(--white);
+    padding: .5rem 0;
+}
+/* Fin Servicios */
+
+/* Galeria */
+
+.galeria .slide{
+    height: 45rem;
+    padding: 2;
+    overflow: hidden;
+    position: relative;
+}
+
+.galeria .slide img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+/* El código anterior define los estilos CSS para un elemento de icono dentro de un elemento
+ de diapositiva dentro de un elemento de galería. Los estilos incluyen ocultar el elemento del icono,
+  colocarlo absolutamente en la esquina superior izquierda del elemento de la diapositiva, 
+  establecer su alto y ancho al 100% y darle un fondo negro semitransparente. */
+.galeria .slide .icon{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.galeria .slide .icon i{
+    font-size: 6rem;
+    color: var(--white);
+}
+
+.galeria .slide:hover .icon{
+    display: flex;
+
+}
+
+/* Fin Galeria */
+
+/* El código anterior define los estilos para la sección de pie de página de una página web. 
+Establece el color de fondo en negro y el color de fuente del encabezado en una variable
+ personalizada llamada "--primary". El encabezado está centrado, tiene un tamaño de fuente 
+ de 2,2 rem y tiene un relleno de 1 reem en la parte superior e inferior. */
+.footer{
+    background: #000;
+}
+
+.footer h3{
+    text-align: center;
+    font-size: 2.2rem;
+    padding: 1reem 0;
+    color: var(--primary);
+}
+.footer .redes{
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.footer .redes a{
+    color: var(--secondary);
+    font-size: 5rem;
+    width: 5rem;
+    height: 5rem;
+    line-height: 5rem;
+    margin: .3rem
+    ;
+}
+
+.footer .redes a:hover{
+    color: var(--white);
+    transform: rotate(360deg);
+}
+
+/* El código anterior define los estilos CSS para la clase "derechos" dentro del elemento "footer".
+ Establece el tamaño de fuente en 2 rem, alinea el texto al centro, agrega un margen y relleno en la 
+ parte superior, crea un borde en la parte superior con una ligera transparencia y establece el color del texto en blanco. */
+.footer .derechos{
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: .1rem solid rgba(0, 0, 0, 0.3);
+    color: var(--white);
+}
+
+.footer .derechos a{
+    color: var(--black);
+}
+
+
+
+/* media queries */
+
+/* El código anterior es una consulta de medios CSS que apunta a pantallas con un ancho máximo 
+de 991 px. Establece el tamaño de fuente del elemento HTML al 55% y agrega un relleno de 2 rem en la parte 
+superior e inferior y 3 rem en los lados izquierdo y derecho del elemento con la clase "encabezado".
+Es probable que esto se haga para ajustar el diseño y el tamaño de fuente para pantallas más pequeñas, como las de los dispositivos móviles. */
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding: 2rem 3rem;
+    }
+
+}
+
+/* El código anterior define estilos CSS para un diseño receptivo. Apunta a pantallas con 
+un ancho máximo de 768 px y ajusta el diseño del botón de menú, la barra de navegación y
+ el contenido en consecuencia. La barra de navegación se coloca fuera de la pantalla y 
+ se desliza desde la derecha cuando se activa. El tamaño de fuente y los márgenes de los
+  enlaces de la barra de navegación se ajustan para pantallas más pequeñas. 
+  El ancho del contenido en la sección "inicio" también se ajusta para pantallas más pequeñas. */
+@media (max-width: 768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top: 110%; right: -110%;
+        width: 30rem;
+        box-shadow: var(--box-shadow);
+        background: var(--black);
+        border-radius: .5rem;
+    }
+
+    .header .navbar.active{
+        right: 3rem;
+        transition: .4s linear;
+    }
+
+    .header .navbar a{
+        font-size: 2rem;
+        margin: 2rem 2.5rem;
+        display: block;
+    }
+
+    .inicio .slide .content{
+        width: 50rem;
+    }
+
+
+}
+
+/* El código anterior es una consulta de medios CSS que apunta a dispositivos con un ancho máximo de 450 px.
+Reduce el tamaño de fuente del HTML al 50 % y ajusta el ancho y el tamaño de fuente de ciertos elementos
+dentro de la clase ".inicio .slide .content" para mejorar el diseño y la legibilidad en pantallas más pequeñas. */
+@media (max-width: 450px){
+
+    html{
+        font-size: 50%;
+    }
+
+    .inicio .slide .content{
+        width: 30rem;
+    }
+
+    .inicio .slide .content h3{
+        font-size: 3rem;
+    }
+
+}

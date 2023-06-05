@@ -1,0 +1,356 @@
+/* Importamos las fuentes */
+/* Importación de la hoja de estilo de Google Fonts para la familia de fuentes Open Sans con diferentes pesos de fuente
+(300, 400, 500, 600) para ser utilizado en la página web. El parámetro "display=swap" se utiliza para garantizar que
+el texto se muestra inmediatamente con fuentes alternativas mientras se carga la fuente Open Sans
+de forma asíncrona en segundo plano. */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
+
+
+/* `:root` es un selector de pseudoclase que selecciona el elemento raíz del documento, que normalmente es
+el elemento `<html>`. El bloque de código siguiente define varias propiedades personalizadas utilizando el CSS
+sintaxis variable, que se utilizan para definir valores de color y sombras de cuadro que se pueden reutilizar en todo
+la hoja de estilo. Se puede acceder a estas propiedades personalizadas y usarlas en otras reglas de CSS haciendo referencia a
+con la función `var()`. Por ejemplo, `var(--primary)` se reemplazaría con el valor
+`#ffa300`. */
+:root{                          /* Selecciona el elemento raiz = html*/
+    --primary: #ffa300;
+    --secondary: #f28322;
+    --black: #333;
+    --white: #fff;
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+/* Este bloque de código CSS establece algunos estilos básicos para todos los elementos de la página web. */
+*{
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans';
+}
+
+/* Este bloque de código CSS está diseñando la sección de encabezado de la página web. */
+header {
+    display: flex;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+}
+header img{
+    margin: 10 10px;
+    padding: 10px;
+    height: 30vh;
+
+}
+
+header h1{
+    text-align: center;
+    font-size: 35px;
+    color: #F9BE5A;
+    padding: 30px 0;
+}
+
+/* Este bloque de código CSS define los estilos para un elemento contenedor con el nombre de clase "contenedor".
+Establece el ancho máximo del contenedor en 1200 píxeles, agrega 10 píxeles de relleno al
+contenedor, centra el contenedor horizontalmente utilizando márgenes automáticos y establece la propiedad de visualización en
+flex con la propiedad de justificar contenido establecida en espacio entre, lo que distribuirá el elemento secundario
+elementos uniformemente con espacio entre ellos. La propiedad "contain: paint" se utiliza para optimizar la
+rendimiento de representación del contenedor diciéndole al navegador que solo vuelva a pintar el contenedor y su
+contenidos cuando sea necesario. */
+.contenedor{
+    max-width: 1200px;
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    /* Ocultamos lo que queda fuera del contenedor */
+    contain: paint;
+}
+
+/* Este bloque de código CSS define los estilos para un elemento contenedor con el nombre de clase
+"contenedor-elementos". Establece el margen superior en 30 píxeles, establece la propiedad de visualización en cuadrícula y
+define un diseño de cuadrícula con columnas que se ajustarán automáticamente para adaptarse al espacio disponible usando
+la sintaxis "repetir (ajuste automático, minmax (220px, 1fr))". Los elementos de la grilla tendrán un ancho mínimo de 220
+píxeles y un ancho máximo de 1 unidad de fracción. Las propiedades "grid-gap" y "grid-row-gap" establecen el
+espacio entre los elementos de la cuadrículams. The width is set to 100% and a transition effect is added with a
+duration of 0.3 seconds. */
+.contenedor .contenedor-elementos{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-gap: 30px;
+    grid-row-gap: 30px;
+    width: 100%;
+    transition: .3s;
+}
+
+/* Este bloque de código CSS define los estilos para un elemento con el nombre de clase "elemento" que es un
+hijo de un elemento con el nombre de clase "contenedor-elementos" que es hijo de un elemento con
+el nombre de la clase "contenedor". Establece el ancho máximo del elemento en 200 píxeles, agrega 10 píxeles
+de relleno al elemento, centra el elemento horizontalmente usando márgenes automáticos, establece un sólido de 1 píxel
+borde con un color de #666, establece un radio de borde de 10 píxeles, establece el relleno en 20 píxeles, agrega
+un efecto de transición con una duración de 0,3 segundos y establece el color del texto en blanco. */
+.contenedor .contenedor-elementos .elemento{
+    max-width: 200px;
+    padding: 10px;
+    margin: auto;
+    border: 1px solid #666;
+    border-radius: 10px;
+    padding: 20px;
+    transition: .3s;
+    color: #fff;
+}
+
+.contenedor-elementos .elemento:hover{
+    box-shadow:  0 0 10px #666;
+    scale: 1.05;
+}
+
+.contenedor-elementos .elemento .imagen-elemento{
+    width: 100%;
+}
+
+/* Este bloque de código CSS está definiendo los estilos para un elemento con el nombre de clase "Nombre-elemento" que
+es un hijo de un elemento con el nombre de clase "contenedor-elementos". Establece la propiedad de visualización en
+bloque, lo que significa que el elemento ocupará todo el ancho disponible y comenzará en un nuevo
+línea. También establece el peso de la fuente en negrita, alinea el texto al centro y transforma el texto
+a mayúsculas. Es probable que esto se use para dar estilo al nombre de un producto o elemento en una cuadrícula de elementos. */
+.contenedor-elementos .Nombre-elemento{
+    display: block;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.contenedor-elementos .elemento .precio-elemento{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+
+}
+
+.contenedor-elementos .elemento .agregar{
+    display: block;
+    margin: 10px auto;
+    border: none;
+    background: var(--primary);
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* carrito */
+/* Este bloque de código CSS está definiendo los estilos para un elemento con el nombre de clase "carrito", que es
+probablemente se usa para mostrar un carrito de compras o un resumen de pago. */
+.carrito{
+    border: 1px solid #F9BE5A;
+    width: 30%;
+    margin-top: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: auto;
+    position: sticky !important;
+    top: 0;
+    transition: .3s;
+    color: #fff;
+    opacity: 0;
+    margin-right: -100%;
+    
+}
+
+/* Este bloque de código CSS está definiendo los estilos para un elemento con el nombre de clase "header-carrito" que
+es hijo de un elemento con el nombre de clase "carrito". Establece el color de fondo al valor de
+la propiedad personalizada "--secundario", que se define como "#f28322" anteriormente en la hoja de estilo. También
+establece el color del texto en blanco, centra el texto horizontalmente usando la propiedad "text-align" y
+agrega 30 píxeles de relleno a la parte superior e inferior del elemento y 0 píxeles de relleno a la izquierda
+y derecha usando la propiedad "relleno". Es probable que esto se use para diseñar la sección de encabezado de un
+carrito de compras o resumen de pago. */
+.carrito .header-carrito{
+    background: var(--secondary);
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.carrito .header-carrito h2{
+    background-color: #f28322;
+}
+
+/* Este bloque de código CSS está definiendo los estilos para un elemento con el nombre de clase "carrito-elemento"
+que es hijo de un elemento con el nombre de clase "carrito". Establece la propiedad de visualización en flex,
+lo que significa que el elemento se mostrará como un contenedor flexible que se puede alinear y
+ordenados de diferentes maneras. La propiedad "align-items" centra los elementos secundarios verticalmente dentro
+El contenedor. La propiedad "posición" se establece en relativa, lo que significa que el elemento será
+colocado con respecto a su posición normal. La propiedad "border-bottom" establece un borde sólido de 1 píxel
+en la parte inferior del elemento con un color de #fff. La propiedad "relleno" agrega 20 píxeles de relleno
+en la parte superior e inferior del elemento y 0 píxeles de relleno a la izquierda y a la derecha. esto es probable
+se utiliza para diseñar un artículo individual en un carrito de compras o resumen de pago. */
+.carrito .carrito-elemento{
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid #fff;
+    padding: 20px;
+    
+}
+
+.carrito .carrito-elemento img{
+    margin-right: 20px;
+}
+/* Este bloque de código CSS define los estilos para un elemento con el nombre de clase
+"carrito-elemento-nombre" que es un hijo de un elemento con el nombre de clase "carrito-elemento" que
+es hijo de un elemento con el nombre de clase "carrito". Establece la propiedad de visualización en bloque, lo que
+significa que el elemento ocupará todo el ancho disponible y comenzará en una nueva línea. También
+establece el peso de la fuente en negrita, agrega un margen de 10 píxeles en la parte inferior del elemento y
+transforma el texto a mayúsculas. Es probable que esto se use para dar estilo al nombre de un artículo en una lista de compras.
+carrito o resumen de pago. */
+.carrito .carrito-elemento .carrito-elemento-nombre{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.carrito .carrito-elemento .selector-cantidad{
+    display: inline-block;
+    margin-right: 25px;
+}
+
+/* Este bloque de código CSS define los estilos para un elemento de entrada con el nombre de clase
+"carrito-elemento-cantidad" que es hijo de un elemento con el nombre de clase "carrito-elemento"
+que es hijo de un elemento con el nombre de clase "carrito". Establece la propiedad border en none,
+establece el tamaño de fuente en 18 píxeles, establece el color de fondo en transparente, establece la propiedad de visualización
+en bloque en línea, establece el ancho en 30 píxeles, establece el relleno en 5 píxeles y establece el texto
+alineación al centro. Es probable que esto se use para diseñar un campo de entrada de cantidad para un artículo en una lista de compras.
+carrito o resumen de pago. */
+.carrito .carrito-elemento .carrito-elemento-cantidad {
+    border: none;
+    font-size: 18px;
+    background: transparent;
+    display: inline-block;
+    width: 30px;
+    padding: 5px;
+    text-align: center;
+
+}
+/* Este bloque de código CSS define los estilos para un elemento de icono que es hijo de un elemento con
+el nombre de la clase "selector-cantidad" que es hijo de un elemento con el nombre de la clase
+"carrito-elemento" que es hijo de un elemento con el nombre de clase "carrito". Establece la fuente
+tamaño a 18 píxeles, establece el ancho y la altura a 32 píxeles, establece la altura de línea a 32 píxeles, establece
+la alineación del texto al centro, establece el radio del borde al 50%, establece un borde sólido de 1 píxel con un
+color de #000, establece el cursor en puntero y probablemente agrega un icono al elemento. esto es probable
+se usa para diseñar un botón selector de cantidad para un artículo en un carrito de compras o resumen de pago. */
+.carrito .carrito-elemento .selector-cantidad i{
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.carrito .carrito-elemento .carrito-elemento-precio{
+    font-weight: bold;
+    display: inline-block;
+    font-size: 18px;
+    margin-bottom: 5px;
+
+}
+
+/* El código anterior define los estilos CSS para un botón con la clase "btn-eliminar" que se usa en
+un elemento de carrito de compras. El botón está posicionado absolutamente en la esquina superior derecha del elemento,
+tiene una forma circular con un borde y un color de #f28322. También tiene un puntero de cursor y un
+fondo transparente. */
+.carrito .carrito-elemento .btn-eliminar{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: #f28322;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #000;
+    cursor: pointer;
+    background: transparent;
+    z-index: 20;
+}
+
+.carrito .carrito-elemento .btn-eliminar i{
+    pointer-events: none;
+}
+
+.carrito-total{
+    background-color: #F9BE5A;
+    padding: 30px;
+}
+
+/* El código anterior define estilos CSS para una clase llamada "fila" que se usa dentro de un elemento con
+clase "carrito-total". Los estilos incluyen mostrar el elemento como un contenedor flexible con elementos
+alineados al centro y espaciados uniformemente entre ellos, configurando el tamaño y el peso de la fuente en negrita,
+agregando un margen en la parte inferior y configurando el color de fondo en #F9BE5A. */
+.carrito-total .fila{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background: #F9BE5A;
+}
+
+.carrito-total .fila strong{
+    background-color: #F9BE5A;
+}
+.carrito-total .fila .carrito-precio-total{
+    background-color: #F9BE5A;
+}
+
+/* El código anterior está definiendo los estilos CSS para un botón con la clase "btn-pagar" que se usa en un
+Sección total del carrito de compras. El botón tiene una pantalla de bloque, un ancho del 100%, sin borde, una naranja
+color de fondo, color de texto blanco, esquinas redondeadas, tamaño de fuente de 18 px y relleno de 20 px. Él
+también tiene una pantalla flexible con espacio entre el contenido, un puntero de cursor y un efecto de transición de
+0,3 segundos. */
+.carrito-total .btn-pagar{
+    display: block;
+    width: 100%;
+    border: none;
+    background: #f28322;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.carrito-total .btn-pagar:hover{
+    scale: 1.05;
+}
+
+/* Responsive */
+
+/* El código anterior es una consulta de medios CSS que apunta a pantallas con un ancho máximo de 850 px. modifica
+los estilos de ciertos elementos cuando el tamaño de la pantalla es menor a 850px. En concreto, establece la
+mostrar la propiedad del elemento ".contenedor" a "bloquear", establece la propiedad de ancho del
+elemento ".contenedor-elementos" al 100% con "!important" para anular cualquier estilo anterior y conjuntos
+la propiedad ancho del elemento ".carrito" al 100%. Es probable que esto se haga para que el sitio web sea más
+receptivo y compatible con dispositivos móviles. */
+@media screen and (max-width:850px) {
+    .contenedor{
+        display: block;
+    }
+    .contenedor-elementos{
+        width: 100% !important;
+    }
+    .carrito{
+        width: 100%;
+    }
+    
+}
